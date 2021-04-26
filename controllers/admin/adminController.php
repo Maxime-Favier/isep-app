@@ -22,7 +22,7 @@ function processAdminEditProfile()
         $name = htmlspecialchars($_POST["name"]);
         $firstName = htmlspecialchars($_POST["firstName"]);
         $email = htmlspecialchars($_POST["email"]);
-        $password = htmlspecialchars($_POST["password"]);
+        $password = password_hash(htmlspecialchars($_POST["password"]),PASSWORD_DEFAULT);//SAM
         $address = htmlspecialchars(($_POST["address"]));
         editProfile($_SESSION["id"], $name, $firstName, $email, $password, $address);
     }
@@ -35,7 +35,7 @@ function processAdminAddDoctor(){
         $name = htmlspecialchars($_POST["name"]);
         $firstName = htmlspecialchars($_POST["firstName"]);
         $email = htmlspecialchars($_POST["email"]);
-        $password = htmlspecialchars($_POST["password"]);
+        $password = password_hash(htmlspecialchars($_POST["password"]),PASSWORD_DEFAULT);//SAM
         $address = htmlspecialchars(($_POST["address"]));
         addNewDoctor($name, $firstName, $email, $password, $address);
     }

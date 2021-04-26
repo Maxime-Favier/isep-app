@@ -12,11 +12,14 @@ function startSession($result)
 function loginUser($email, $password)
 {
     include 'bddConf.php';
-    $reponse = $db->prepare("SELECT * FROM users WHERE email=? AND password=?");
-    $reponse->execute(array($email, $password));
+    $reponse = $db->prepare("SELECT * FROM users WHERE email=?");//pas de condition sur password
+    $reponse->execute(array($email));
     //echo "here<br/>";
+
     $result = $reponse->fetch();
-    if ($result) {
+    $isPasswordCorrect = password_verify($password,$result['password']);
+
+    if ($isPasswordCorrect) {
 
         // test si c'est un admin
         $adminreq = $db->prepare("SELECT * FROM admin WHERE adminId=?");
@@ -70,6 +73,7 @@ function loginUser($email, $password)
         }
     }else{
         header('Location: login');
+
         die();
     }
 }

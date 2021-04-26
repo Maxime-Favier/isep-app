@@ -55,7 +55,7 @@ function processDoctorEditProfile()
         $name = htmlspecialchars($_POST["name"]);
         $firstName = htmlspecialchars($_POST["firstName"]);
         $email = htmlspecialchars($_POST["email"]);
-        $password = htmlspecialchars($_POST["password"]);
+        $password = password_hash(htmlspecialchars($_POST["password"]),PASSWORD_DEFAULT);
         $address = htmlspecialchars(($_POST["address"]));
         editProfile($_SESSION["id"], $name, $firstName, $email, $password, $address);
     }
@@ -69,7 +69,7 @@ function processDoctorAddPilote()
         $name = htmlspecialchars($_POST["name"]);
         $firstName = htmlspecialchars($_POST["firstName"]);
         $email = htmlspecialchars($_POST["email"]);
-        $password = htmlspecialchars($_POST["password"]);
+        $password = password_hash(htmlspecialchars($_POST["password"]),PASSWORD_DEFAULT);
         $address = htmlspecialchars(($_POST["address"]));
         addPilote($_SESSION["id"], $name, $firstName, $email, $password, $address);
     }

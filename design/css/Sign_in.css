@@ -1,0 +1,47 @@
+body {
+    font-family: Calibri;
+    text-align: center;
+    background-color: whitesmoke;
+}
+
+.Icon {
+    height: 6em;
+    width: 6em;
+    margin-left: 0px;
+    border-radius: 10%;
+}
+
+header {
+    background: #a1cbe6;
+    display: flex;
+    position: sticky;
+    top: 0px;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+}
+
+.button2 {
+    background: #a1cbe6;
+    color: black;
+    font-size: 50px;
+    cursor: pointer;
+    opacity: 1;
+    font-size: 25px;
+    padding: 10px;
+    border: solid black 1px;
+}
+
+p {
+    display: inline-block;
+    margin: 5px;
+}
+
+footer {
+    padding: 5px;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    width: 99%;
+    background-color: #a1cbe6;
+}

@@ -1,0 +1,57 @@
+header{
+    background: #a1cbe6;
+    display: flex;
+    top : 0px;
+    width : 100%;
+    justify-content: space-between ;
+    align-items : center;
+    box-shadow: black 0px 20px 50px -30px ;
+}
+
+.Icon{
+    height: 7em;
+    width: 7em;
+    margin-left : 0px;
+    border-radius: 10%;
+}
+
+table,th,td {
+    border : 1px solid black;
+    border-collapse: collapse;
+    font-size: 20px;
+}
+
+th, td{
+    padding : 5px;
+    text-align: center;
+    background-color: #a1cbe6;
+}
+
+td{
+    background-color: whitesmoke;
+}
+
+table{
+    margin-left: 7.5%;
+    width: 85%;
+    height: 100px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+body{
+    font-family: Calibri;
+}
+
+img{
+    width: 100px;
+}
+
+footer{
+    padding: 5px;
+    text-align: center;
+    position : fixed;
+    bottom : 0px;
+    width : 99%;
+    background-color: #a1cbe6;
+}

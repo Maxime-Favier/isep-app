@@ -17,7 +17,7 @@ function loginUser($email, $password)
     //echo "here<br/>";
 
     $result = $reponse->fetch();
-    $isPasswordCorrect = password_verify($password,$result['password']);
+    $isPasswordCorrect = password_verify($password, $result['password']);
 
     if ($isPasswordCorrect) {
 
@@ -71,8 +71,8 @@ function loginUser($email, $password)
             }
             die();
         }
-    }else{
-        header('Location: login');
+    } else {
+        header('Location: login?bad=1');
 
         die();
     }

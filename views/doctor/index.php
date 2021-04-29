@@ -26,10 +26,10 @@ Les derniers test de mes patients
         <th>Nom</th>
         <th>Prénom</th>
         <th>Date</th>
-        <th>React Time L</th>
-        <th>React Time S</th>
-        <th>temperature</th>
-        <th>HB</th>
+        <th>Réaction au son (ms)</th>
+        <th>Réaction à la lumière (ms)</th>
+        <th>Temperature (C)</th>
+        <th>Pulsations cardiaques par minute</th>
     </tr>
     <?php
     require_once("models/doctor/getLatestTest.php");

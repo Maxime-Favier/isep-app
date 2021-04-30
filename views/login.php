@@ -36,12 +36,13 @@
     </form>
     <?php
     if(isset($_GET["bad"])){
-        ?><p>Email ou Mot de passe incorrect : En cas d'oubli contatez l'administrateur</p>
+        ?><p>Email ou Mot de passe incorrect : En cas d'oubli contactez l'administrateur</p>
     <?php
     }
     ?>
     <br/>
     <a href="/">Home</a>
+
 
 </section>
 <footer>

@@ -29,12 +29,12 @@ function processPiloteEditProfile()
         $name = htmlspecialchars($_POST["name"]);
         $firstName = htmlspecialchars($_POST["firstName"]);
         $email = htmlspecialchars($_POST["email"]);
-        $password = password_hash(htmlspecialchars($_POST["password"]));
+        $password = password_hash(htmlspecialchars($_POST["password"]), PASSWORD_DEFAULT);
         $address = htmlspecialchars(($_POST["address"]));
         editProfile($_SESSION["id"], $name, $firstName, $email, $password, $address);
     }
     header('Location: index');
-    die();
+    //die();
 }
 
 function processPiloteCgu()

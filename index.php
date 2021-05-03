@@ -9,6 +9,7 @@ require ROOT . "/controllers/indexController.php";
 require ROOT . "/controllers/admin/adminRouter.php";
 require ROOT . "/controllers/doctor/doctorRouter.php";
 require ROOT . "/controllers/pilote/piloteRouter.php";
+require ROOT . "/controllers/messaging/messagingRouter.php";
 
 if (isset($_GET["action"])) {
     // sanitizing input
@@ -28,6 +29,8 @@ if (isset($_GET["action"])) {
         doctorRouter(substr($action, 7));
     }elseif (substr($action, 0, 7) == "pilote/") {
         piloteRouter(substr($action, 7));
+    }elseif (substr($action, 0, 10) == "messaging/") {
+        messagingRouter(substr($action, 10));
     }
     else {
         echo "Erreur 404 Not found - index <br/>" . $action;

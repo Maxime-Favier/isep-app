@@ -18,8 +18,11 @@ echo $_SESSION['name'] . " - " . $_SESSION["firstName"] . " - " . $_SESSION['ema
 <br/>
 <a href="editProfile">editProfile</a>
 <br/>
-<a href="addPilote">addPilote</a>
+<a href="addPilote">addPilot</a>
 <br/>
+<a href="../messaging/index">messaging</a>
+<br/>
+
 Les derniers test de mes patients
 <table>
     <tr>

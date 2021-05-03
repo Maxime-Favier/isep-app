@@ -35,6 +35,8 @@ echo $_SESSION['name'] . " - " . $_SESSION["firstName"] . " - " . $_SESSION['ema
 <br/>
 <a href="editProfile">editProfile</a>
 <br/>
+<a href="../messaging/index">messaging</a>
+<br/>
 Info medecin<br/>
 <?php
 require_once("models/pilote/get-docInfo.php");

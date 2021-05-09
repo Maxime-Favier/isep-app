@@ -23,16 +23,21 @@ if (isset($_GET["action"])) {
         processLogout();
     } elseif ($action == "login-process") {
         processLogin();
-    }elseif (substr($action, 0, 6) == "admin/") {
-       adminRouter(substr($action, 6));
-    }elseif (substr($action, 0, 7) == "doctor/") {
+    } elseif ($action == "contact") {
+        seeContact();
+    } elseif ($action == "send-message") {
+        processEmailContact();
+    } elseif ($action == "faq") {
+        seeFAQ();
+    } elseif (substr($action, 0, 6) == "admin/") {
+        adminRouter(substr($action, 6));
+    } elseif (substr($action, 0, 7) == "doctor/") {
         doctorRouter(substr($action, 7));
-    }elseif (substr($action, 0, 7) == "pilote/") {
+    } elseif (substr($action, 0, 7) == "pilote/") {
         piloteRouter(substr($action, 7));
-    }elseif (substr($action, 0, 10) == "messaging/") {
+    } elseif (substr($action, 0, 10) == "messaging/") {
         messagingRouter(substr($action, 10));
-    }
-    else {
+    } else {
         echo "Erreur 404 Not found - index <br/>" . $action;
     }
 

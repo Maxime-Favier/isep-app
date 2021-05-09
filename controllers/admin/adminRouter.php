@@ -28,6 +28,15 @@ function adminRouter($route)
         case "submit-addDoctor":
             processAdminAddDoctor();
             break;
+        case "editfaq":
+            seeAdminEditFAQ();
+            break;
+        case 'addQuestion':
+            processAddFAQQuestion();
+            break;
+        case "deleteQuestion":
+            processDeleteFAQQuestion();
+            break;
         default:
             echo "Erreur 404 (Not Found) - admin<br/>" . $route;
             break;

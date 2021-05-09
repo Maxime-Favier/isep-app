@@ -20,6 +20,8 @@ echo $_SESSION['name'] . " - " . $_SESSION["firstName"] . " - " . $_SESSION['ema
 <a href="addDoctor">Add doctor</a>
 <br/>
 <a href="../messaging/index">messaging</a>
+<br/>
+<a href="editfaq">Edit FAQ</a>
 </body>
 </html>
 

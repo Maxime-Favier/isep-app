@@ -93,9 +93,9 @@
 <footer>
     <a class="foot">Infinite Measure</a>
     <p style="display: inline">|</p>
-    <a class="foot">Contact</a>
+    <a href="/contact" class="foot">Contact</a>
     <p style="display: inline">|</p>
-    <a class="foot">FAQ</a>
+    <a href="/faq" class="foot">FAQ</a>
     <p style="display: inline">|</p>
     <a class="foot">CGU</a>
 </footer>

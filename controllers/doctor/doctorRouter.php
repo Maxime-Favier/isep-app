@@ -35,6 +35,15 @@ function doctorRouter($route)
         case "infoPilote":
             seeInforPilote();
             break;
+        case "editUsers":
+            seeDoctorEditUsers();
+            break;
+        case "editPilot":
+            doctorSeeEditPilote();
+            break;
+        case    "submit-profile-pilot":
+            doctorProcessEditProfile();
+            break;
         default:
             echo "Erreur 404 (Not Found) - doctor<br/>" . $route;
             break;

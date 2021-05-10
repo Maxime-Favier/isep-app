@@ -74,6 +74,54 @@ if ($result) {
         ?>
     </table>
 </div>
+
+<br/>
+<form method="post" action="index">
+    <label for="searchUsers">Date du test recherché:</label>
+    <input type="search" name="searchUsers" id="searchUsers"/>
+</form>
+
+
+<table>
+    <?php
+    if (isset($_POST['searchUsers'])) {
+
+        require_once('controllers/pilote/piloteController.php');
+        $tableau = processPilotSearchTest();
+        $compteur = count($tableau);//count return n+1 ou n est le nombre d'élément du tableau
+        if ($compteur != 1) {
+            ?>
+            <tr>
+                <th>date</th>
+                <th>reaction lumiere</th>
+                <th>reaction son</th>
+                <th>temperature peau</th>
+                <th>Rythme cardique</th>
+            </tr>
+            <?php
+            for ($i = 1; $i < $compteur; $i++) {
+
+                ?>
+
+                <tr>
+                    <td><?php echo $tableau[$i][1]; ?></td>
+                    <td><?php echo $tableau[$i][2]; ?></td>
+                    <td><?php echo $tableau[$i][3]; ?></td>
+                    <td><?php echo $tableau[$i][4]; ?></td>
+                    <td><?php echo $tableau[$i][5]; ?></td>
+                </tr>
+
+            <?php }
+        } else {
+            echo "Aucun de résultat";
+        }
+
+    } else {
+
+    }
+    ?>
+</table>
+
 <img src="/design/img/Test.png"><a href="addTest"><h2>Faire un nouveau test</h2></a>
 <footer>
     <a class="foot">Infinite Measure</a>

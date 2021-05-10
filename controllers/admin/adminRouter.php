@@ -37,6 +37,24 @@ function adminRouter($route)
         case "deleteQuestion":
             processDeleteFAQQuestion();
             break;
+        case "adminInfoUser":
+            adminSeeInforUser();
+            break;
+        case "infoPilote":
+            adminSeeInforPilote();
+            break;
+        case "editUsers":
+            seeAdminEditUsers();
+            break;
+        case "submit-profile-user":
+            adminProcessEditProfile();
+            break;
+        case "editPilot":
+            adminSeeEditPilote();
+            break;
+        case "submit-profile-pilot":
+            doctorProcessEditProfile();
+            break;
         default:
             echo "Erreur 404 (Not Found) - admin<br/>" . $route;
             break;

@@ -19,6 +19,9 @@ $infoPilote = $infoPilotereq->fetch();
 echo $infoPilote["name"] . " - " . $infoPilote['firstName'] . " - " . $infoPilote["email"] . " - " . $infoPilote["address"]
 //echo $_GET["piloteId"];
 ?>
+
+<a href ="editPilot?typeOfUser=pilote&piloteId=<?php echo $_GET["piloteId"]; ?>">gestion du profil</a>
+
 <table>
     <tr>
         <th>Date</th>

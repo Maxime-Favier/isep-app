@@ -12,4 +12,11 @@ function editProfile($id, $name, $firstName, $email, $password, $address)
     $_SESSION["address"] = $address;
 }
 
+function editProfileByOtherUser($id, $name, $firstName, $email, $password, $address){
+    include 'bddConf.php';
+    $reponse = $db->prepare("UPDATE users SET name=?, firstName=?, email=?, password=?, address=? WHERE id=?");//SAM
+    $reponse->execute(array($name, $firstName, $email, $password, $address, $id));
+
+}
+
 ?>

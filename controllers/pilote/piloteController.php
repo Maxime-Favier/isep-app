@@ -2,6 +2,7 @@
 require_once("models/edit-profile.php");
 require_once("models/pilote/process-cgu.php");
 require_once('models/pilote/add-test.php');
+require_once('models/pilote/search-test.php');
 
 function seePiloteIndex()
 {
@@ -58,6 +59,29 @@ function processAddTest()
     }
     header('Location: index');
     die();
+}
+
+function processPilotSearchTest()
+{
+    if (isset($_POST["searchUsers"])) {
+        $expression = $_POST["searchUsers"];
+        $reponse = pilotSearchTest($expression, $_SESSION['id']);
+        $compteur = 1;
+        $tableau = [[]];
+        while ($result = $reponse->fetch()) {
+            $tableau[$compteur][1] = $result['date'];
+            $tableau[$compteur][2] = $result['reactTimeL'];
+            $tableau[$compteur][3] = $result['reactTimeS'];
+            $tableau[$compteur][5] = $result['hearBeat'];
+            $tableau[$compteur][4] = $result['temperature'];
+            $compteur = $compteur + 1;
+        }
+
+        return $tableau;
+        header('Location:index');
+    } else {
+        return [[]];
+    }
 }
 
 ?>

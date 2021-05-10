@@ -23,16 +23,16 @@ echo $_SESSION['name'] . " - " . $_SESSION["firstName"] . " - " . $_SESSION['ema
 <a href="../messaging/index">messaging</a>
 <br/>
 
-Les derniers test de mes patients
 <table>
+    <p>Les derniers test de mes patients</p>
     <tr>
         <th>Nom</th>
         <th>Prénom</th>
         <th>Date</th>
-        <th>Réaction au son (ms)</th>
-        <th>Réaction à la lumière (ms)</th>
-        <th>Temperature (C)</th>
-        <th>Pulsations cardiaques par minute</th>
+        <th>React Time L</th>
+        <th>React Time S</th>
+        <th>temperature</th>
+        <th>HB</th>
     </tr>
     <?php
     require_once("models/doctor/getLatestTest.php");
@@ -52,10 +52,11 @@ Les derniers test de mes patients
         <?php
     }
     ?>
+
 </table>
-<br/>
-Mes patients
+
 <table>
+    <p>Mes patients</p>
     <tr>
         <th>Nom</th>
         <th>Prénon</th>
@@ -67,7 +68,8 @@ Mes patients
     while ($patient = $pilotereq->fetch()) {
         ?>
         <tr>
-            <td><a href="infoPilote?piloteId=<?php echo $patient["piloteId"]; ?>"><?php echo $patient["name"]; ?></a></td>
+            <td><a href="infoPilote?piloteId=<?php echo $patient["piloteId"]; ?>"><?php echo $patient["name"]; ?></a>
+            </td>
             <td><?php echo $patient["firstName"]; ?></td>
             <td><?php echo $patient["email"]; ?></td>
         </tr>
@@ -75,7 +77,54 @@ Mes patients
     }
     ?>
 </table>
+
+
+<br/>
+
+<form method="post" action="index">
+    <label for="searchUsers">Nom ou prénom:</label>
+    <input type="search" name="searchUsers" id="searchUsers"/>
+
+</form>
+
+<table>
+
+    <?php
+    if (isset($_POST['searchUsers'])) {
+
+        require_once('controllers/doctor/doctorController.php');
+        $tableau = processDoctorSearchUsers();
+        $compteur = count($tableau);//count return n+1 ou n est le nombre d'élément du tableau
+        if ($compteur != 1) {
+            ?>
+
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+            </tr>
+
+            <?php
+            for ($i = 1; $i < $compteur; $i++) {
+
+                ?>
+
+                <tr>
+                    <th><a href="infoPilote?piloteId=<?php echo $tableau[$i][5]; ?>"><?php echo $tableau[$i][1]; ?></a>
+                    </th>
+                    <th><a href="infoPilote?piloteId=<?php echo $tableau[$i][5]; ?>"><?php echo $tableau[$i][2]; ?></a>
+                    </th>
+                </tr>
+
+            <?php }
+        } else {
+            echo "Aucun de résultat";
+        }
+
+    } else {
+
+    }
+
+    ?>
+</table>
 </body>
 </html>
-<?php
-?>

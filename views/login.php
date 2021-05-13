@@ -10,53 +10,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<header>
-
-
-    <figure class = "BlocIcon">
-        <img class = "Icon" src = "/design/img/Logo.png"/>
-    </figure>
-    <div class = "blockbutton">
-        <?php if(isset($_SESSION['name'])){
-            echo $_SESSION['name'].'<a href="" class = "button2"><span></span><i class="fa fa-user"></i></a>';
-        }else{
-            echo"<a href='' class = 'button2'><span>MENU</span><i class='fa fa-gear'></i></a>";
-        }; ?>
-    </div>
-</header>
-<section class = 'formulaire'>
+<?php
+include "common/headerLogin.php";
+?>
+<section class='formulaire'>
     <h1>Connexion</h1>
-    <form action="login-process" method="post">
-        <label for="fmail">Email:</label>
-        <input type="email" id="fmail" name="email" required><br/>
-        <label for="fpassw">Mot de passe:</label>
-        <input type="password" id="fpassw" name="password" required><br/>
-        <br/>
-        <button type="submit">Envoyer</button>
+    <form method='post' action='login-process'>
+        <label type='text' for='email'>Email</label> : <input name='email' type='email' id='email'><br/>
+        <label type='password' for='password'>Mot de passe</label> : <input name='password' type='password'
+                                                                            id='password'><br/>
+        <a href="contact"><p>Mot de passe oublié ?</p></a>
+        <?php
+        if (isset($_GET["bad"])) {
+            ?><p>Email ou Mot de passe incorrect : En cas d'oubli contactez l'administrateur</p>
+            <?php
+        }
+        ?>
+        <input name='2' class='button' type='submit' value='Envoyer'>
     </form>
-    <?php
-    if(isset($_GET["bad"])){
-        ?><p>Email ou Mot de passe incorrect : En cas d'oubli contactez l'administrateur</p>
-    <?php
-    }
-    ?>
-    <br/>
-    <a href="/">Home</a>
-
 
 </section>
-<footer>
-    <a class = "foot">Infinite Measure</a>
-    <p style="display: inline">|</p>
-    <a class = "foot" >Contact</a>
-    <p style="display: inline">|</p>
-    <a class = "foot">FAQ</a>
-    <p style="display: inline">|</p>
-    <a class = "foot">CGU</a>
-</footer>
-
-
-
-
+<?php
+include "common/footer.php"
+?>
 </body>
 </html>

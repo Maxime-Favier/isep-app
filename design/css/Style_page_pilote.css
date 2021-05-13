@@ -1,18 +1,34 @@
+body{
+    font-family: Calibri;
+    background-color: whitesmoke;
+}
+
+.Icon{
+    height: 6em;
+    width: 6em;
+    margin-left : 0px;
+    border-radius: 10%;
+}
+
+.button2{
+    background: #a1cbe6 ;
+    color : black;
+    font-size: 50px;
+    cursor : pointer;
+    opacity: 1;
+    font-size: 25px;
+    padding: 10px;
+    border: solid black 1px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
 header{
     background: #a1cbe6;
     display: flex;
     top : 0px;
-    width : 100%;
     justify-content: space-between ;
     align-items : center;
-    box-shadow: black 0px 20px 50px -30px ;
-}
-
-.Icon{
-    height: 7em;
-    width: 7em;
-    margin-left : 0px;
-    border-radius: 10%;
 }
 
 table,th,td {
@@ -31,27 +47,87 @@ td{
     background-color: whitesmoke;
 }
 
-table{
-    margin-left: 7.5%;
-    width: 85%;
-    height: 100px;
-    overflow: scroll;
-    overflow-x: hidden;
+#body{
+    margin-left: 2.5%;
 }
 
-body{
-    font-family: Calibri;
+table{
+    margin-left: 5%;
+    width: 85%;
+    overflow: scroll;
+    overflow-x: hidden;
+    height:100px;
+    margin-bottom: 10px;
+}
+
+#test img{
+    vertical-align: middle;
+    margin-right: 10px;
 }
 
 img{
     width: 100px;
 }
-
+.foot{
+    text-decoration: none;
+    color:black;
+    cursor: pointer;
+}
 footer{
-    padding: 5px;
+    padding:5px;
     text-align: center;
-    position : fixed;
-    bottom : 0px;
     width : 99%;
     background-color: #a1cbe6;
+    margin-top:10px;
+}
+
+#add{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+
+#menu_deroulant ul /*on sélectionne la liste entière */
+{
+    list-style: none;
+    margin: 0;
+    padding:0;
+}
+#menu_deroulant ul li /* on sélectionne les en-têtes de notre liste */
+{
+    margin: 0;
+    padding: 0;
+    width: 130px;
+    height: 40px;
+    float: left;
+
+    line-height: 40px;
+    text-align: center;
+
+}
+#menu_deroulant a:hover  /* on sélectionne tous les liens de notre liste (hover = lorsque l'on passe le curseur de la souris sur l'élément) */
+{
+    background-color: grey;
+    opacity: 1;
+
+}
+
+#menu_deroulant a  /* on sélectionne tous les liens de notre liste sans hover */
+{
+    display: block;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+
+
+}
+
+#menu_deroulant ul li ul li /* on sélectionne les élements des listes */
+{
+    display: none;
+}
+
+#menu_deroulant ul li:hover ul li
+{
+    display: block;
 }

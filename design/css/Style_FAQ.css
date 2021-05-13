@@ -10,6 +10,27 @@ body{
     border-radius: 10%;
 }
 
+img{
+    width: 100px;
+}
+
+div p{
+    text-align: justify;
+}
+
+.button2{
+    background: #a1cbe6 ;
+    color : black;
+    font-size: 50px;
+    cursor : pointer;
+    opacity: 1;
+    font-size: 25px;
+    padding: 10px;
+    border: solid black 1px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
 header{
     background: #a1cbe6;
     display: flex;
@@ -18,10 +39,13 @@ header{
     align-items : center;
     z-index: 999;
 }
-
+.foot{
+    text-decoration: none;
+    color:black;
+    cursor: pointer;
+}
 .button2{
-    margin-right:10px;
-    background: white ;
+    background: #a1cbe6 ;
     color : black;
     font-size: 50px;
     cursor : pointer;
@@ -29,92 +53,12 @@ header{
     font-size: 25px;
     padding: 10px;
     border: solid black 1px;
-    text-decoration: none;
 }
 
-.button2:hover{
-    background-color: grey;
-}
-
-.foot{
-    text-decoration: none;
-    color:black;
-    cursor: pointer;
-}
 span{
     text-decoration:  none;
     font-style: normal;
     margin: 1px
-}
-
-.presentation{
-    font-family: SansSerif;
-    font-size: 50px;
-    text-align: center;
-    background: whitesmoke;
-    width: 100%;
-}
-
-.corp{
-    background: whitesmoke;
-    margin-top : 0em;
-    display: flex;
-    justify-content: center ;
-    height: 100%;
-}
-
-#gallery{
-    display:flex;
-    justify-content: space-between;
-    width: 50%;
-    position: relative;
-    height:20%;
-}
-
-div{
-    display: inline;
-}
-
-ul, li {
-    list-style: none;
-    margin-top: 0px;
-    margin-left: -20px;
-    position: absolute;
-}
-
-#main img{
-    width:440px;
-    height: 440px;
-}
-
-ul img {
-    opacity:0;
-    width:600px;
-    margin:auto;
-    -moz-transition:opacity 1s ease-in-out;
-    -webkit-transition:opacity 1s ease-in-out;
-    -o-transition:opacity 1s ease-in-out;
-    transition: opacity 1s ease-in-out;
-}
-
-ul img:target {
-    opacity:1;
-
-}
-
-#gallery img{
-    width: 100px;
-    padding: 5px;
-    position: relative;
-    z-index: 0;
-}
-
-.Articles{
-    margin:10px;
-    width: 1000px;
-    height: 600px;
-    overflow: scroll;
-    overflow-x: hidden;
 }
 
 footer{
@@ -124,6 +68,7 @@ footer{
     text-align: center;
     bottom : 0px;
     width : 99%;
+    margin-top: 10px;
 }
 
 #menu_deroulant ul /*on sélectionne la liste entière */
@@ -148,7 +93,7 @@ footer{
 {
     background-color: grey;
     opacity: 1;
-    z-index: 9999;
+
 }
 
 #menu_deroulant a  /* on sélectionne tous les liens de notre liste sans hover */

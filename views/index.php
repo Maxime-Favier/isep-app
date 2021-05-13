@@ -10,18 +10,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<header>
+<?php
+include "views/common/headerIndex.php";
+?>
 
-    <figure class="BlocIcon">
-        <img class="Icon" src="/design/img/Logo.png"/>
-    </figure>
-    <div class="blockbutton">
-        <a href="login" class="button2"><span>Connexion</span><i class="fa fa-user"></i></a>
-    </div>
-</header>
 <section class="presentation">
     <p>
-        "Les mesures les plus précises, les appareils les plus fiable"
+        "Les mesures les plus précises, les appareils les plus fiables"
     </p>
 </section>
 <section class=corp>
@@ -56,7 +51,7 @@
         </article>
 
         <article>
-            <h2>Infinite measure prix nobel 2025</h2>
+            <h2>Infinite measure nouveau leader du suivi des pilotes</h2>
             <p>Constituendi autem sunt qui sint in amicitia fines
                 et quasi termini diligendi. De quibus tres video
                 sententias ferri, quarum nullam probo, unam, ut eodem
@@ -90,14 +85,9 @@
 
     </div>
 </section>
-<footer>
-    <a class="foot">Infinite Measure</a>
-    <p style="display: inline">|</p>
-    <a href="/contact" class="foot">Contact</a>
-    <p style="display: inline">|</p>
-    <a href="/faq" class="foot">FAQ</a>
-    <p style="display: inline">|</p>
-    <a class="foot">CGU</a>
-</footer>
+
+<?php
+include "views/common/footer.php";
+?>
 </body>
 </html>

@@ -10,32 +10,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-<header>
-    <figure class="BlocIcon">
-        <img class="Icon" src="/design/img/Infinite_measures.gif"/>
-    </figure>
-    <img src="/design/img/Message.jpg" class="far fa-envelope"></img>
-    <div class="blockbutton">
-        <?php if (isset($_SESSION['name'])) {
-            echo $_SESSION['name'] . '<a href="" class = "button2"><span></span><i class="fa fa-user"></i></a>';
-        } else {
-            echo "<a href='' class = 'button2'><span>MENU</span><i class='fa fa-gear'></i></a>";
-        }; ?>
-
-    </div>
-
-</header>
+<?php
+include "views/common/headerPilote.php";
+?>
 interface pilote
 <br/>
 <?php
 echo $_SESSION['name'] . " - " . $_SESSION["firstName"] . " - " . $_SESSION['email'] . " - " . $_SESSION["role"];
 ?>
-<br/>
-<a href="../logout">logout</a>
-<br/>
-<a href="editProfile">editProfile</a>
-<br/>
-<a href="../messaging/index">messaging</a>
 <br/>
 Info medecin<br/>
 <?php

@@ -5,30 +5,49 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/design/css/Style_page_pilote.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Information pilote</title>
 </head>
 <body>
-Information pilote
-<br/>
-<a href="index">Retour</a>
-<br/>
+
 <?php
+if ($_SESSION['role'] == "admin"){
+    include "views/admin/adminHeader.php";
+}elseif($_SESSION['role'] == "doctor"){
+    include "views/doctor/doctorHeader.php";
+}else{
+    include "views/common/headerLogin.php";
+}
+?>
+<div id="body">
+
+
+
+<?php
+
 require_once("models/doctor/infoPilote.php");
 $infoPilotereq = getInfoPilote($_GET["piloteId"]);
 $infoPilote = $infoPilotereq->fetch();
-echo $infoPilote["name"] . " - " . $infoPilote['firstName'] . " - " . $infoPilote["email"] . " - " . $infoPilote["address"]
-//echo $_GET["piloteId"];
 ?>
+    <h1>Informations de <?php echo $infoPilote['name']." ".$infoPilote['firstName']?></h1>
+<?php
 
-<a href ="editPilot?typeOfUser=pilote&piloteId=<?php echo $_GET["piloteId"]; ?>">gestion du profil</a>
+echo "<p>".$infoPilote["name"] . " - " . $infoPilote['firstName'] . " - " . $infoPilote["email"] . " - " . $infoPilote["address"]."</p>";
+//echo $_GET["piloteId"];
 
+?>
+    <a href ="editPilot?typeOfUser=pilote&piloteId=<?php echo $_GET["piloteId"]; ?>"><img src="/design/img/edit.png" alt="edit"></a>
+
+
+    <h1>Liste des derniers tests de <?php echo $infoPilote['name']." ".$infoPilote['firstName']?></h1>
 <table>
     <tr>
         <th>Date</th>
-        <th>React Time L</th>
-        <th>React Time S</th>
-        <th>temperature</th>
-        <th>HB</th>
+        <th>Temps de réaction au son (ms)</th>
+        <th>Temps de réaction à la lumière (ms)</th>
+        <th>Temperature (C)</th>
+        <th>Pulsations cardiaques par minute</th>
     </tr>
     <?php
     require_once('models/doctor/getTestFromPilote.php');
@@ -45,7 +64,17 @@ echo $infoPilote["name"] . " - " . $infoPilote['firstName'] . " - " . $infoPilot
         <?php
     }
     ?>
+
 </table>
 
+    <br/>
+    <a href="index">Retour</a>
+    <br/>
+
+
+</div>
+<?php
+include "views/common/footer.php";
+?>
 </body>
 </html>

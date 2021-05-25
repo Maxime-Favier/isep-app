@@ -5,5 +5,5 @@
     <p style="display: inline">|</p>
     <a href="faq" class = "foot">FAQ</a>
     <p style="display: inline">|</p>
-    <a href="/" class = "foot">CGU</a>
+    <a href="CGU" class = "foot">CGU</a>
 </footer>

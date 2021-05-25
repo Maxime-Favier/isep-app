@@ -10,7 +10,21 @@
 </head>
 <body>
 <?php
-include "common/headerLogin.php";
+if(isset($_SESSION['role'])){
+    if($_SESSION['role']=="admin"){
+        include "views/admin/adminHeader.php";
+    }elseif($_SESSION['role']=="doctor"){
+        include "views/doctor/doctorHeader.php";
+    }elseif($_SESSION['role']=="pilote"){
+        include "views/common/headerPilote.php";
+    }else{
+        include "views/common/headerLogin.php";
+    }
+}else{
+    include "views/common/headerLogin.php";
+}
+
+
 ?>
 <div>
     <?php

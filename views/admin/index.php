@@ -5,36 +5,38 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/design/css/Style_page_admin.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <title>administation</title>
 </head>
 <body>
-interface admin<br/>
 <?php
-echo $_SESSION['name'] . " - " . $_SESSION["firstName"] . " - " . $_SESSION['email'] . " - " . $_SESSION["role"];
+include "views/admin/adminHeader.php";
 ?>
-<br/>
-<a href="../logout">logout</a>
-<br/>
-<a href="editProfile">editProfile</a>
-<br/>
-<a href="addDoctor">Add doctor</a>
-<br/>
-<a href="../messaging/index">messaging</a>
-<br/>
-<a href="editfaq">Edit FAQ</a>
 
-<form method="post" action="index">
-    <label for="typeOfUser"></label>
-    <select name='typeOfUser' id='typeOfUser'>
-        <option value=''>Choisissez une option</option>
-        <option value='doctor'>docteur</option>
-        <option value='pilot'>pilote</option>
-    </select>
 
-    <label for="searchUsers">Nom ou prénom:</label>
-    <input type="search" name="searchUsers" id="searchUsers"/>
+<div id="body">
+    <?php
+    echo"<h1> Bienvenu ".$_SESSION['name'] . " " . $_SESSION["firstName"] . " "."</h1>";
+    ?>
+    <a id="add" href="addDoctor"><img src="/design/img/plus.png" class="plus">Créer un nouveau profil Médecin</a>
+    <form method="post" action="index">
+        <label for="typeOfUser"></label>
+        <select name='typeOfUser' id='typeOfUser'>
+            <option value=''>Choisissez une option</option>
+            <option value='doctor'>Docteur</option>
+            <option value='pilot'>Pilote</option>
+        </select>
 
-</form>
+        <label for="searchUsers">Nom ou prénom:</label>
+        <input type="search" id="searchUsers" name="searchUsers"><input name ="search" type="Submit" class="button" value="Rechercher">
+
+    </form>
+
+</div>
+
+
 <table>
 
     <?php
@@ -53,28 +55,38 @@ echo $_SESSION['name'] . " - " . $_SESSION["firstName"] . " - " . $_SESSION['ema
             </tr>
 
             <?php
+            if($_POST['typeOfUser'] == 'doctor'){
+                echo "<h1>Liste des médecins</h1>";
+            }else{
+                echo "<h1>Liste des pilotes</h1>";
+            }
+
             for ($i = 1; $i < $compteur; $i++) {
 
                 ?>
 
                 <tr>
-                    <th>
+                    <td>
                         <a href="adminInfoUser?userId=<?php echo $tableau[$i][5]; ?>&typeOfUser=<?php echo $_POST['typeOfUser']; ?> "><?php echo $tableau[$i][1]; ?></a>
-                    </th>
-                    <th>
+                    </td>
+                    <td>
                         <a href="adminInfoUser?userId=<?php echo $tableau[$i][5]; ?>&typeOfUser=<?php echo $_POST['typeOfUser']; ?> "><?php echo $tableau[$i][2]; ?></a>
-                    </th>
+                    </td>
                 </tr>
 
             <?php }
         } else {
-            echo "Aucun de résultat";
+            echo "<p>Aucun de résultat</p>";
         }
 
     }
 
     ?>
 </table>
+
+<?php
+include "views/common/footer.php";
+?>
 </body>
 </html>
 

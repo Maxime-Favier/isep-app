@@ -26,6 +26,11 @@ function seeFAQ()
     require ROOT . "/views/faq.php";
 }
 
+function seeCGU()
+{
+    require ROOT . "/views/CGU.php";
+}
+
 function processLogout()
 {
     logout();

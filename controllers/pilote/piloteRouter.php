@@ -20,8 +20,17 @@ function piloteRouter($route)
         case "submit-profile":
             processPiloteEditProfile();
             break;
+        case "faq":
+            seeFAQ();
+            break;
         case "cgu":
             seePiloteCgu();
+            break;
+        case "CGU":
+            seeCGU();
+            break;
+        case "contact":
+            seeContact();
             break;
         case "process-cgu":
             processPiloteCgu();

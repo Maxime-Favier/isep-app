@@ -1,8 +1,36 @@
+body{
+    font-family: Calibri;
+    background-color: whitesmoke;
+    height:100%;
+}
+
+footer{
+    background-color: #a1cbe6;
+    padding: 5px;
+    margin-bottom: 0px;
+    bottom : 0px;
+    width : 99%;
+    margin-top: 10px;
+    position:absolute;
+    bottom:0;
+    text-align: center;
+}
+
 .Icon{
     height: 6em;
     width: 6em;
     margin-left : 0px;
     border-radius: 10%;
+}
+
+header{
+    background: #a1cbe6;
+    display: flex;
+    position: sticky;
+    top : 0px;
+    justify-content: space-between ;
+    align-items : center;
+    z-index: 999;
 }
 
 .button2{
@@ -18,70 +46,47 @@
     text-decoration: none;
 }
 
-header{
-    background: #a1cbe6;
-    display: flex;
-    top : 0px;
-    justify-content: space-between ;
-    align-items : center;
+label{
+    text-align: justify;
 }
 
-table,th,td {
-    border : 1px solid black;
-    border-collapse: collapse;
+
+input[type=text],input[type=message]{
+    width: 200px;
+}
+
+input[type=message]{
+    margin-top: 10px;
+    width:90%;
+    height: 400px;
+    vertical-align: top;
+}
+
+label[type=text]{
+    margin-left: 0px;
+}
+
+input[name=object]{
+    width: 500px;
+}
+
+label[type=message]{
+    margin-left: 4px;
+}
+
+input[type=Submit]{
     font-size: 20px;
-}
-
-th, td{
-    padding : 5px;
-    text-align: center;
+    font-family: Calibri;
+    width:100px;
+    cursor:pointer;
     background-color: #a1cbe6;
+    margin-left: 89%;
 }
 
-td{
-    background-color: whitesmoke;
-}
-
-table{
-    margin-left: 5%;
-    width: 85%;
-    overflow: scroll;
-    overflow-x: hidden;
-    height:100px;
-    margin-bottom: 10px;
-}
-
-#test img{
-    vertical-align: middle;
-    margin-right: 10px;
-}
-
-img{
-    width: 100px;
-}
 .foot{
     text-decoration: none;
     color:black;
     cursor: pointer;
-}
-body{
-    font-family: Calibri;
-    background-color: whitesmoke;
-    height:100%;
-}
-
-footer{
-    padding: 5px;
-    text-align: center;
-    bottom : 0px;
-    width : 99%;
-    background-color: #a1cbe6;
-}
-
-#add{
-    text-decoration: none;
-    color: black;
-    font-size: 20px;
 }
 
 #menu_deroulant{
@@ -127,16 +132,4 @@ footer{
 #menu_deroulant ul li:hover ul li
 {
     display: block;
-}
-
-#corps{
-    margin-left: 2.5%;
-}
-
-#body{
-    height:94%
-}
-
-input[type=search]{
-    margin-bottom: 10px;
 }

@@ -72,13 +72,21 @@ input[type=Submit]{
     cursor: pointer;
 }
 
+#main{
+    height:94vh;
+}
+
 footer{
     padding: 5px;
     text-align: center;
-    bottom : 0px;
-    width : 99%;
+    bottom : 0%;
+    width : 98%;
     background-color: #a1cbe6;
     margin-top: 10px;
+}
+
+#menu_deroulant{
+    z-index: 10;
 }
 
 #menu_deroulant ul /*on sélectionne la liste entière */
@@ -94,7 +102,6 @@ footer{
     width: 130px;
     height: 40px;
     float: left;
-
     line-height: 40px;
     text-align: center;
 
@@ -103,7 +110,6 @@ footer{
 {
     background-color: grey;
     opacity: 1;
-
 }
 
 #menu_deroulant a  /* on sélectionne tous les liens de notre liste sans hover */
@@ -112,8 +118,6 @@ footer{
     text-decoration: none;
     color: black;
     background-color: white;
-
-
 }
 
 #menu_deroulant ul li ul li /* on sélectionne les élements des listes */

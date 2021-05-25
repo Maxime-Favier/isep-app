@@ -29,6 +29,15 @@ function doctorRouter($route)
         case "cgu":
             seeDoctorCGU();
             break;
+        case "faq":
+            seeFAQ();
+            break;
+        case "CGU":
+            seeCGU();
+            break;
+        case "contact":
+            seeContact();
+            break;
         case "process-cgu":
             processCgu();
             break;

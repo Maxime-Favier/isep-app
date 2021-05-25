@@ -13,6 +13,7 @@
 <?php
 include "common/headerLogin.php";
 ?>
+<div id="body">
 <section class='formulaire'>
     <h1>Connexion</h1>
     <form method='post' action='login-process'>
@@ -30,6 +31,7 @@ include "common/headerLogin.php";
     </form>
 
 </section>
+</div>
 <?php
 include "common/footer.php"
 ?>

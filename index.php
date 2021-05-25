@@ -27,6 +27,8 @@ if (isset($_GET["action"])) {
         seeContact();
     } elseif ($action == "send-message") {
         processEmailContact();
+    } elseif ($action == "CGU") {
+        seeCGU();
     } elseif ($action == "faq") {
         seeFAQ();
     } elseif (substr($action, 0, 6) == "admin/") {

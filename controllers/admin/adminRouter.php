@@ -31,6 +31,15 @@ function adminRouter($route)
         case "editfaq":
             seeAdminEditFAQ();
             break;
+        case "faq":
+            seeFAQ();
+            break;
+        case "CGU":
+            seeCGU();
+            break;
+        case "contact":
+            seeContact();
+            break;
         case 'addQuestion':
             processAddFAQQuestion();
             break;

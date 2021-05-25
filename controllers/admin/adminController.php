@@ -10,6 +10,11 @@ function seeAdminIndex()
     require ROOT . "/views/admin/index.php";
 }
 
+function adminSeeFAQ()
+{
+    require ROOT . "/views/admin/faq.php";
+}
+
 function seeAdminEditProfile()
 {
     require ROOT . "/views/admin/editProfile.php";

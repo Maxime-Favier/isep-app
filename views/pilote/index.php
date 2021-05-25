@@ -13,7 +13,8 @@
 <?php
 include "views/common/headerPilote.php";
 ?>
-interface pilote
+
+<h1>Interface pilote</h1>
 <br/>
 <?php
 echo $_SESSION['name'] . " - " . $_SESSION["firstName"] . " - " . $_SESSION['email'] . " - " . $_SESSION["role"];
@@ -33,7 +34,7 @@ if ($result) {
 <div class="tableau">
     <table>
         <tr>
-            <th>date</th>
+            <th>Date</th>
             <th>Temps de réaction au son (ms)</th>
             <th>Temps de réaction à la lumière (ms)</th>
             <th>Temperature (C)</th>
@@ -74,11 +75,11 @@ if ($result) {
         if ($compteur != 1) {
             ?>
             <tr>
-                <th>date</th>
-                <th>reaction lumiere</th>
-                <th>reaction son</th>
-                <th>temperature peau</th>
-                <th>Rythme cardique</th>
+                <th>Date</th>
+                <th>Temps de réaction au son (ms)</th>
+                <th>Temps de réaction à la lumière (ms)</th>
+                <th>Temperature (C)</th>
+                <th>Pulsations cardiaques par minute</th>
             </tr>
             <?php
             for ($i = 1; $i < $compteur; $i++) {
@@ -105,14 +106,8 @@ if ($result) {
 </table>
 
 <img src="/design/img/Test.png"><a href="addTest"><h2>Faire un nouveau test</h2></a>
-<footer>
-    <a class="foot">Infinite Measure</a>
-    <p style="display: inline">|</p>
-    <a class="foot">Contact</a>
-    <p style="display: inline">|</p>
-    <a class="foot">FAQ</a>
-    <p style="display: inline">|</p>
-    <a class="foot">CGU</a>
-</footer>
+<?php
+include "views/common/footer.php";
+?>
 </body>
 </html>

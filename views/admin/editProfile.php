@@ -19,7 +19,7 @@ include "views/admin/adminHeader.php";
 <form action="submit-profile" method="post">
     <p>
     <h1>Edition de profil</h1>
-    <label type ="name" for="fnom">Nom</label> :
+    <label type="name" for="fnom">Nom</label> :
     <input type="text" id="fnom" name="name" required value="<?php echo $_SESSION["name"]; ?>"><br/>
 
     <label type='firstname' for="ffistName">Prénom</label> :
@@ -34,7 +34,7 @@ include "views/admin/adminHeader.php";
     <label type='password' for="fpassw">Mot de passe</label> :
     <input type="password" id="fpassw" name="password" required>
     <br/>
-    <input name ="2" type="submit" value = 'Envoyer'>
+    <input name="2" type="submit" value='Envoyer'>
     </p>
 
 </form>

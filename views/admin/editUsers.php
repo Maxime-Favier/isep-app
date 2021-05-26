@@ -16,12 +16,11 @@ include "views/admin/adminHeader.php";
 ?>
 
 <?php
-    if(isset($_GET['deleteUser'])and isset($_GET['typeOfUser'])){
+if (isset($_GET['deleteUser']) and isset($_GET['typeOfUser'])) {
     require_once("models/delete-user.php");
-    deleteUser($_GET['typeOfUser'],$_GET['userId']);
-    echo "Compte supprimé";?><a href = 'index'>Retour à l'accueil</a><?php
-    }
-else {
+    deleteUser($_GET['typeOfUser'], $_GET['userId']);
+    echo "Compte supprimé"; ?><a href='index'>Retour à l'accueil</a><?php
+} else {
 
     require_once("models/admin/InfoUser.php");
     $infoUserreq = getInfoUser($_GET["userId"]);
@@ -30,40 +29,38 @@ else {
     <h1>Edition du profil<br/></h1>
 
 
+    <form action="submit-profile-user" method="post">
+        <label type="nom" for="fnom">Nom</label> :
+        <input type="text" id="fnom" name="name" required value="<?php echo $infoUser["name"]; ?>"><br>
 
-        <form action="submit-profile-user" method="post">
-        <label type ="nom" for="fnom">Nom</label> :
-        <input type="text" id="fnom" name="name" required value="<?php echo $infoUser["name"] ; ?>"><br>
+        <label type="firstName" for="ffistName">Prénom</label> :
+        <input type="text" id="ffistName" name="firstName" required value="<?php echo $infoUser['firstName']; ?>"><br>
 
-        <label type = "firstName" for="ffistName">Prénom</label> :
-        <input type="text" id="ffistName" name="firstName" required value="<?php echo $infoUser['firstName'] ; ?>"><br>
+        <label type="address" for="faddress">adresse</label> :
+        <input type="text" id="faddress" name="address" required value="<?php echo $infoUser["address"]; ?>"><br>
 
-        <label type = "address" for="faddress">adresse</label> :
-        <input type="text" id="faddress" name="address" required value="<?php echo $infoUser["address"] ; ?>"><br>
-
-        <label type = "email" for="fmail">Email</label> :
+        <label type="email" for="fmail">Email</label> :
         <input type="email" id="fmail" name="email" required value="<?php echo $infoUser["email"]; ?>"><br>
 
-        <label type = "password" for="fpassw">Mot de passe</label> :
+        <label type="password" for="fpassw">Mot de passe</label> :
         <input type="password" id="fpassw" name="password" required>
 
-        <input type = 'hidden' id = "userId" name = "userId" value="<?php echo $_GET["userId"]; ?>"/>
+        <input type='hidden' id="userId" name="userId" value="<?php echo $_GET["userId"]; ?>"/>
 
         <br/>
-        <input name ="2" type="submit" value = 'Envoyer'>
+        <input name="2" type="submit" value='Envoyer'>
         <br/>
-        <a href = "editUsers?deleteUser=true&userId=<?php echo$_GET['userId'];?>&typeOfUser=<?php echo $_GET['typeOfUser'] ; ?>"> suprimer le compte </a>
+        <a href="editUsers?deleteUser=true&userId=<?php echo $_GET['userId']; ?>&typeOfUser=<?php echo $_GET['typeOfUser']; ?>">
+            suprimer le compte </a>
 
-        </form>
+    </form>
 
 
+    <?php
 
+}
 
-        <?php
-
-    }
-
-    ?>
+?>
 
 
 </body>

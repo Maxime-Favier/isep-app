@@ -47,9 +47,12 @@ if (isset($_SESSION['role'])) {
                             <br>
                             <span><?php
                                 $name = getNameFromId($conversation["expeditor"]);
-                                echo $name["firstName"] . " " . $name["name"] . ", ";
-                                $name2 = getNameFromId($conversation["recipient"]);
-                                echo $name2["firstName"] . " " . $name2["name"];
+                                if ($_SESSION['name'] !== $name["name"]) {
+                                    echo $name["firstName"] . " " . $name["name"] . ", ";
+                                } else {
+                                    $name2 = getNameFromId($conversation["recipient"]);
+                                    echo $name2["firstName"] . " " . $name2["name"];
+                                }
                                 ?>
                             </span>
                         </p>
@@ -61,7 +64,6 @@ if (isset($_SESSION['role'])) {
         </div>
     </div>
 </div>
-
 
 
 <br/>

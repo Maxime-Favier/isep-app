@@ -1,20 +1,17 @@
 body{
     font-family: Calibri;
     background-color: whitesmoke;
-    text-align: center;
     height:100%;
 }
 
 footer{
-    background-color: #a1cbe6;
-    padding: 5px;
     margin-bottom: 0px;
+    position:absolute;
+    padding: 5px;
     text-align: center;
     bottom : 0px;
-    width : 99%;
-    margin-top: 10px;
-    position:absolute;
-    bottom:0;
+    width : 98.3%;
+    background-color: #a1cbe6;
 }
 .Icon{
     height: 6em;
@@ -31,6 +28,11 @@ header{
     z-index: 999;
 }
 
+#back {
+	right: 10px;
+	position: absolute;
+
+}
 
 
 ul img {
@@ -58,14 +60,13 @@ ul img {
 
 
 
-/* M E N U */
 
 .menu {
-    position: fixed;
+    position: absolute;
     top: 150px;
-    left: 0px;
+    left: 8px;
     right: 0px;
-    width: 100%;
+    width: 98.9%;
     height: 50px;
     background: #a1cbe6;
     z-index: -1;
@@ -97,7 +98,6 @@ ul img {
     word-spacing: 2px;
 }
 
-/* M E S S A G E S */
 
 .chat {
     list-style: none;
@@ -112,53 +112,8 @@ ul img {
     overflow: hidden;
     display: flex;
 }
-.chat .day {
-    position: relative;
-    display: block;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.3);
-    height: 20px;
-    text-shadow: 7px 0px 0px #252c33, 6px 0px 0px #252c33, 5px 0px 0px #252c33,
-    4px 0px 0px #252c33, 3px 0px 0px #252c33, 2px 0px 0px #252c33,
-    1px 0px 0px #252c33, 1px 0px 0px #252c33, 0px 0px 0px #252c33,
-    -1px 0px 0px #252c33, -2px 0px 0px #252c33, -3px 0px 0px #252c33,
-    -4px 0px 0px #252c33, -5px 0px 0px #252c33, -6px 0px 0px #252c33,
-    -7px 0px 0px #252c33;
-    box-shadow: inset 20px 0px 0px #252c33, inset -20px 0px 0px #252c33,
-    inset 0px -2px 0px rgba(255, 255, 255, 0.1);
-    line-height: 38px;
-    margin-top: 5px;
-    margin-bottom: 20px;
-    cursor: default;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-}
-.chat .notification {
-    position: relative;
-    display: inherit;
-    text-align: center;
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.15);
-    background: rgba(234, 247, 255, 0.035);
-    line-height: 30px;
-    border-radius: 100px;
-    margin: 7px 35%;
-    height: 30px;
-    width: 30%;
-    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05), 0px -1px 0px rgba(0, 0, 0, 0.05),
-    inset 0px 1px 0px rgba(255, 255, 255, 0.02),
-    inset 0px -1px 0px rgba(255, 255, 255, 0.02);
-    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1),
-    0px 1px 0px rgba(255, 255, 255, 0.05);
-    cursor: default;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    transition: all 0.2s cubic-bezier(0.565, -0.26, 0.255, 1.41);
-}
+
+
 .chat .notification time {
     position: absolute;
     top: 7px;
@@ -251,10 +206,9 @@ ul img {
     margin-right: 4px;
 }
 
-/* T Y P E */
 
 textarea {
-    width: 88%;
+    width: 85%;
     height: 50px;
     z-index: 100;
     border: none;
@@ -265,19 +219,22 @@ textarea {
     color: #666;
     resize: none;
     z-index: 200;
+    margin-top: 15%;
+    position: absolute;
 
 }
 
 
 .send {
-    bottom: 0px;
-    right: 0px;
     width: 8%;
     height: 50px;
     border: none;
     outline: none;
     z-index: 100;
     cursor: pointer;
+    margin-top:17%;
+    margin-left: 91%;
+    position: absolute;
 }
 .send:active {
     opacity: 0.85;

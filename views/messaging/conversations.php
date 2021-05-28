@@ -23,64 +23,66 @@ if (isset($_SESSION['role'])) {
     }
 }
 ?>
-<div id="chatbox">
-    <div id="friendslist">
-        <div id="topmenu">
-            <span class="Amis"></span>
+<div class="flex">
+    <div id="chatbox">
+        <div id="friendslist">
+            <div id="topmenu">
+                <span class="Amis"></span>
 
-            <button id="b1" class="NewMessage"></button>
+                <button id="b1" class="NewMessage"></button>
 
 
-        </div>
-        <div id="friends">
-            <?php
-            include_once("models/messaging/get-conversation.php");
-            include_once("models/messaging/getNameFromId.php");
-            $conversationRq = getConversation($_SESSION['id']);
-            while ($conversation = $conversationRq->fetch()) {
-                ?>
-                <a href="seeConversation?cid=<?php echo $conversation["id"]; ?>">
-                    <div class="friend">
-                        <img src="https://static.jobat.be//uploadedImages/grandprofilfb.jpg"/>
-                        <p>
-                            <strong><?php echo $conversation["object"]; ?></strong>
-                            <br>
-                            <span><?php
-                                $name = getNameFromId($conversation["expeditor"]);
-                                if ($_SESSION['name'] !== $name["name"]) {
-                                    echo $name["firstName"] . " " . $name["name"] . ", ";
-                                } else {
-                                    $name2 = getNameFromId($conversation["recipient"]);
-                                    echo $name2["firstName"] . " " . $name2["name"];
-                                }
-                                ?>
-                            </span>
-                        </p>
-                    </div>
-                </a>
+            </div>
+            <div id="friends">
                 <?php
-            }
-            ?>
+                include_once("models/messaging/get-conversation.php");
+                include_once("models/messaging/getNameFromId.php");
+                $conversationRq = getConversation($_SESSION['id']);
+                while ($conversation = $conversationRq->fetch()) {
+                    ?>
+                    <a href="seeConversation?cid=<?php echo $conversation["id"]; ?>">
+                        <div class="friend">
+                            <img src="https://static.jobat.be//uploadedImages/grandprofilfb.jpg"/>
+                            <p>
+                                <strong><?php echo $conversation["object"]; ?></strong>
+                                <br>
+                                <span><?php
+                                    $name = getNameFromId($conversation["expeditor"]);
+                                    if ($_SESSION['name'] !== $name["name"]) {
+                                        echo $name["firstName"] . " " . $name["name"] . ", ";
+                                    } else {
+                                        $name2 = getNameFromId($conversation["recipient"]);
+                                        echo $name2["firstName"] . " " . $name2["name"];
+                                    }
+                                    ?>
+                            </span>
+                            </p>
+                        </div>
+                    </a>
+                    <?php
+                }
+                ?>
+            </div>
         </div>
     </div>
+
+
+    <br/>
+    <form method="post" action="add-conversation" id="masqué">
+        <label for="destination">Choisir un destinataire</label>
+        <select name="dest" id="destination">
+            <?php
+            include_once("models/messaging/getAvailableRecipient.php");
+            getAvailableRecipient($_SESSION["role"], $_SESSION["id"]);
+            ?>
+        </select>
+        <br/><br/>
+        <label for="subject">Objet</label><br/>
+        <input type="text" id="subject" name="subject">
+        <br/><br/><br/>
+        <button type="submit">Envoyer</button>
+    </form>
 </div>
-
-
-<br/>
-<form method="post" action="add-conversation" id="masqué">
-    <label for="destination">Choisir un destinataire</label>
-    <select name="dest" id="destination">
-        <?php
-        include_once("models/messaging/getAvailableRecipient.php");
-        getAvailableRecipient($_SESSION["role"], $_SESSION["id"]);
-        ?>
-    </select>
-    <br/><br/>
-    <label for="subject">Objet</label><br/>
-    <input type="text" id="subject" name="subject">
-    <br/><br/><br/>
-    <button type="submit">Envoyer</button>
-</form>
 <br/>
 <?php
 include "views/common/footer.php"

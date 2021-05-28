@@ -1,154 +1,169 @@
-p { 
-  margin: 0px; padding: 0px; 
+p {
+    margin: 0px;
+    padding: 0px;
 }
-body{
+
+body {
     font-family: Calibri;
     background-color: whitesmoke;
     height: 100%
 }
 
-#chatbox{
-  width:290px;
-  background:#fff;
-  border-radius:6px;
-  overflow:hidden;
-  height:484px;
-  position:absolute;
-  top:180px;
-  left:50%;
-  margin-left:-755px;
-}
-
-
-#topmenu{
-  height:69px;
-  width:362px;
-  border-bottom:1px solid #d8dfe3;  
-  background-color:hsl(0, 0%, 90%);
-}
-.Amis{
-  float: left;
-  width: 145px;
-  height: 69px;
-  background: url("https://cdn.pixabay.com/photo/2017/06/22/10/11/icon-2430270_1280.png")  no-repeat;
-  background-size : 50%;
-}
-
-.NewMessage:hover{
-  opacity: 0.5;
-  cursor: pointer;
-}
-
-.NewMessage{
-  float: right;
-  width: 145px;
-  height: 69px;
-  background: url("https://cdn.pixabay.com/photo/2017/01/10/03/54/icon-1968237_960_720.png")  no-repeat;
-  background-size : 50%;
-}
-
-.friend{
-  height:70px;
-  border-bottom:1px solid #e7ebee;    
-  position:relative;
-}
-.friend:hover{
-  background:#f1f4f6;
-  cursor:pointer;
-}
-.friend img{
-  width:40px;
-  border-radius:50%;
-  margin:15px;
-  float:left;
-}
-
-.friend p{
-  padding:15px 0 0 0;     
-  float:left;
-  width:220px;
-}
-.friend p strong{
-  font-weight:600;
-  font-size:15px;
-  color:#597a96;  
-
-}
-.friend p span{
-  font-size:13px;
-  font-weight:400;
-  color:#aab8c2;
-}
-.friend .status{
-  border-radius:50%;  
-  width:9px;
-  height:9px;
-  position:absolute;
-  top:31px;
-  right:50px;
-  color:#aab8c2;
+#chatbox {
+    width: 290px;
+    background: #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    height: 484px;
+    position: absolute;
 
 }
 
-#search{
-  background:#e3e9ed url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/search.png") -11px 0 no-repeat;
-  height:60px;
-  width:290px;
-  position:absolute;
-  bottom:0;
-  left:0;
+
+#topmenu {
+    height: 69px;
+    width: 362px;
+    border-bottom: 1px solid #d8dfe3;
+    background-color: hsl(0, 0%, 90%);
 }
-#searchfield{
-  background:#e3e9ed;
-  margin:21px 0 0 55px;
-  border:none;
-  padding:0;
-  font-size:14px;
-  font-family:"Open Sans", sans-serif; 
-  font-weight:400px;
-  color:#8198ac;
+
+.Amis {
+    float: left;
+    width: 145px;
+    height: 69px;
+    background: url("https://cdn.pixabay.com/photo/2017/06/22/10/11/icon-2430270_1280.png") no-repeat;
+    background-size: 50%;
 }
-#searchfield:focus{
-   outline: 0;
+
+.NewMessage:hover {
+    opacity: 0.5;
+    cursor: pointer;
 }
-footer{
+
+.NewMessage {
+    float: right;
+    width: 145px;
+    height: 69px;
+    background: url("https://cdn.pixabay.com/photo/2017/01/10/03/54/icon-1968237_960_720.png") no-repeat;
+    background-size: 50%;
+}
+
+.friend {
+    height: 70px;
+    border-bottom: 1px solid #e7ebee;
+    position: relative;
+}
+
+.friend:hover {
+    background: #f1f4f6;
+    cursor: pointer;
+}
+
+.friend img {
+    width: 40px;
+    border-radius: 50%;
+    margin: 15px;
+    float: left;
+}
+
+.friend p {
+    padding: 15px 0 0 0;
+    float: left;
+    width: 220px;
+}
+
+.friend p strong {
+    font-weight: 600;
+    font-size: 15px;
+    color: #597a96;
+
+}
+
+.friend p span {
+    font-size: 13px;
+    font-weight: 400;
+    color: #aab8c2;
+}
+
+.friend .status {
+    border-radius: 50%;
+    width: 9px;
+    height: 9px;
+    position: absolute;
+    top: 31px;
+    right: 50px;
+    color: #aab8c2;
+
+}
+
+#search {
+    background: #e3e9ed url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/search.png") -11px 0 no-repeat;
+    height: 60px;
+    width: 290px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#searchfield {
+    background: #e3e9ed;
+    margin: 21px 0 0 55px;
+    border: none;
+    padding: 0;
+    font-size: 14px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400px;
+    color: #8198ac;
+}
+
+#searchfield:focus {
+    outline: 0;
+}
+
+footer {
     margin-bottom: 0px;
-    position:absolute;
+    position: absolute;
     padding: 5px;
     text-align: center;
-    bottom : 0px;
-    width : 98.3%;
+    bottom: 0px;
+    width: 98.3%;
     background-color: #a1cbe6;
 }
 
-.Icon{
+.foot {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.Icon {
     height: 7em;
     width: 7em;
-    margin-left : 0px;
+    margin-left: 0px;
     border-radius: 10%;
-} 
+}
 
-header{
+header {
     background: #a1cbe6;
     display: flex;
-    top : 0px;
-    justify-content: space-between ;
-    align-items : center;
+    top: 0px;
+    justify-content: space-between;
+    align-items: center;
     z-index: 999;
 }
-body{
+
+body {
     font-family: Calibri;
     background-color: whitesmoke;
 }
- 
 
 
-.button2{
-    margin-right:10px;
-    background: #a1cbe6 ;
-    color : black;
+.button2 {
+    margin-right: 10px;
+    background: #a1cbe6;
+    color: black;
     font-size: 50px;
-    cursor : pointer;
+    cursor: pointer;
     opacity: 1;
     font-size: 25px;
     padding: 10px;
@@ -156,16 +171,16 @@ body{
 }
 
 
-
 #menu_deroulant ul /*on sélectionne la liste entière */
 {
     list-style: none;
     margin: 0;
-    padding:0;
+    padding: 0;
 }
+
 #menu_deroulant ul li /* on sélectionne les en-têtes de notre liste */
 {
-    margin: 0; 
+    margin: 0;
     padding: 0;
     width: 130px;
     height: 40px;
@@ -175,14 +190,15 @@ body{
     text-align: center;
 
 }
-#menu_deroulant a:hover  /* on sélectionne tous les liens de notre liste (hover = lorsque l'on passe le curseur de la souris sur l'élément) */
+
+#menu_deroulant a:hover /* on sélectionne tous les liens de notre liste (hover = lorsque l'on passe le curseur de la souris sur l'élément) */
 {
     background-color: grey;
     opacity: 0.7;
 
 }
 
-#menu_deroulant a  /* on sélectionne tous les liens de notre liste sans hover */
+#menu_deroulant a /* on sélectionne tous les liens de notre liste sans hover */
 {
     display: block;
     text-decoration: none;
@@ -197,31 +213,32 @@ body{
     display: none;
 }
 
-#menu_deroulant ul li:hover ul li  
-{
+#menu_deroulant ul li:hover ul li {
     display: block;
 }
 
-#masqué{
-  position: relative;
-  left: 900px;
-  top: 60px;
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
 }
 
-#Destinataire{
-  position: relative;
-  left: 150px;
+form {
+    position: relative;
+    left: 45%;
+    margin-top: 3%;
 }
-input[id=subject]{
-    width:30%;
-    height: 100px;
-    vertical-align: top;
-}
-button[type=submit]{
+
+button[type=submit] {
     font-size: 20px;
     font-family: Calibri;
-    width:100px;
-    cursor:pointer;
+    width: 100px;
+    cursor: pointer;
     background-color: #a1cbe6;
-    margin-left: 17%;
+}
+
+input[id=subject] {
+    width: 400px;
 }

@@ -32,8 +32,9 @@ include "common/headerLogin.php";
 
 </section>
 </div>
+
 <?php
-include "common/footer.php"
+include "common/footer.php";
 ?>
 </body>
 </html>

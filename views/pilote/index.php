@@ -14,19 +14,17 @@
 include "views/common/headerPilote.php";
 ?>
 
-<h1>Interface pilote</h1>
-<br/>
+<h1>Informations générales</h1>
 <?php
-echo $_SESSION['name'] . " - " . $_SESSION["firstName"] . " - " . $_SESSION['email'] . " - " . $_SESSION["role"];
+//echo $_SESSION['name'] . " - " . $_SESSION["firstName"] . " - " . $_SESSION['email'] . " - " . $_SESSION["role"];
 ?>
-<br/>
-Info medecin<br/>
+<b>Mon médecin</b><br/>
 <?php
 require_once("models/pilote/get-docInfo.php");
 $docInfo = getDocteurInfo($_SESSION['id']);
 $result = $docInfo->fetch();
 if ($result) {
-    echo $result["name"] . " " . $result["firstName"] . " - " . $result["email"] . " - " . $result["address"];
+    echo $result["name"] . " " . $result["firstName"] . "<br/>" . $result["email"] . "<br/>" . $result["address"];
 }
 ?>
 <br/>
@@ -59,6 +57,7 @@ if ($result) {
 </div>
 
 <br/>
+<h1>Recherche de tests :</h1>
 <form method="post" action="index">
     <label for="searchUsers">Date du test recherché:</label>
     <input type="search" name="searchUsers" id="searchUsers"/>
@@ -105,7 +104,9 @@ if ($result) {
     ?>
 </table>
 
-<img src="/design/img/Test.png"><a href="addTest"><h2>Faire un nouveau test</h2></a>
+<div id="test">
+    <a id="add"  href="addTest"><img src="/design/img/Test.png"/>Faire un nouveau test</a>
+</div>
 <?php
 include "views/common/footer.php";
 ?>

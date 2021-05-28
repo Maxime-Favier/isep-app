@@ -42,19 +42,18 @@ label{
 }
 
 
-input[type=text],input[type=password]{
+input[type=email],input[type=password]{
     width: 200px;
-}
-
-input[type=password]{
-    margin-top: 10px;
+    height: 25px;
+    margin-top: 7px;
+    margin-bottom: 7px;
 }
 
 label[type=password]{
     margin-left: -52px;
 }
 
-input[type=Submit]{
+input[type=submit]{
     font-size: 20px;
     font-family: Calibri;
     width:100px;

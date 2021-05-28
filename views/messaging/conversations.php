@@ -17,7 +17,7 @@ if (isset($_SESSION['role'])) {
     } elseif ($_SESSION['role'] == "doctor") {
         include "views/messaging/headers/headerDoctor.php";
     } elseif ($_SESSION['role'] == "pilote") {
-        include "views/common/headerPilote.php";
+        include "views/messaging/headers/headerPilote.php";
     } else {
         include "views/common/headerLogin.php";
     }

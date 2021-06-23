@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="/design/css/Style_page_admin.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>administation</title>
+
+    <title>Administration</title>
 </head>
 <body>
 <?php
@@ -17,7 +18,7 @@ include "views/admin/adminHeader.php";
 
 <div id="body">
     <?php
-    echo"<h1> Bienvenu ".$_SESSION['name'] . " " . $_SESSION["firstName"] . " "."</h1>";
+    echo"<h1> Bienvenue ".$_SESSION['name'] . " " . $_SESSION["firstName"] . " "."</h1>";
     ?>
     <a id="add" href="addDoctor"><img src="/design/img/plus.png" class="plus">Créer un nouveau profil Médecin</a>
     <form method="post" action="index">

@@ -13,13 +13,15 @@
 <?php
 include "views/doctor/doctorHeader.php";
 ?>
-le texte de mes cgu pour le medecin
 <br/>
 <form method="post" action="process-cgu">
-    <p>Veuillez accepter les dernières <a href='CGU.html'>conditions d'utilisations</a>
+    <p>Veuillez accepter les dernières <a href='CGU' target="_blank">conditions d'utilisations</a>
         <input type="checkbox" id="cgu" name="cgu" required>
         <br/>
         <button type="submit">Envoyer</button>
 </form>
+<?php
+include ("views/common/footer.php");
+?>
 </body>
 </html>

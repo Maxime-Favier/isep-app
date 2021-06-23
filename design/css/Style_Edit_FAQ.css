@@ -14,6 +14,9 @@ header{
     align-items : center;
     z-index: 999;
 }
+button {
+    background-color: #a1cbe6;
+}
 
 .button2{
     margin-right:10px;
@@ -100,9 +103,8 @@ footer{
     margin-bottom: 0px;
     text-align: center;
     bottom : 0px;
-    width : 99%;
+    width : 98.5%;
     margin-top: 10px;
-    position:absolute;
     bottom:0;
 }
 
@@ -115,4 +117,14 @@ h2{
 
 input[type=submit]{
     background-color: #a1cbe6;
+}
+input[type=text]{
+    width:99%;
+}
+
+input[name=answer]{
+    height : 170px;
+}
+.corps{
+    height: 94vh;
 }

@@ -6,7 +6,7 @@ function sendEmailAdmin($userEmail, $userText)
     $emailActivation = false;
     $emailAdmin = "admin@allowinno.isep.fr";
     $subject = "formulaire de contact";
-    $headers = 'From: mailer@allowinno.isep.fr' . "\r\n" .
+    $headers = 'From: admin@allowinno.isep.fr' . "\r\n" .
         'Reply-To: ' . $userEmail . "\r\n" .
         'X-Mailer: PHP/' . phpversion();
     if ($emailActivation) {

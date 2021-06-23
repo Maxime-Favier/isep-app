@@ -68,15 +68,15 @@ label[type=password]{
 }
 
 label[type=name]{
-    margin-left: 4px;
+    margin-left: 1px;
 }
 
 label[type=firstname]{
-    margin-left: -16px;
+    margin-left: -18px;
 }
 
 label[type=address]{
-    margin-left: -16px;
+    margin-left: -13px;
 }
 
 input[type=Submit]{

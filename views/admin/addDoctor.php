@@ -17,14 +17,13 @@ include("views/admin/adminHeader.php")
 <br/>
 
 <div id="body">
-    <section class='formulaire'>
+    <section class = 'formulaire'>
         <form action="submit-addDoctor" method="post">
             <p>
             <h1>Création d'un profil Médecin</h1>
             <label type="name" for="fnom">Nom</label> : <input type="text" id="fnom" name="name" required"><br/>
 
-            <label type="firstname" for="ffistName">Prénom</label> : <input type="text" id="ffistName" name="firstName"
-                                                                            required><br/>
+            <label type="firstname" for="ffistName">Prénom</label> : <input type="text" id="ffistName" name="firstName" required><br/>
 
             <label type="address" for="faddress">adresse:</label>
             <input type="text" id="faddress" name="address" required><br/>
@@ -33,17 +32,22 @@ include("views/admin/adminHeader.php")
             <input type="email" id="fmail" name="email" required><br/>
 
             <label type='password' for="fpassw">Mot de passe:</label>
-            <input type="password" id="fpassw" name="password" required>
+            <input type="password" id="fpassw" name="password" required minlength="8">
 
             <br/>
-            <input name="2" type="submit" value='Envoyer'>
+            <input name ="2" type="submit" value = 'Envoyer'>
             </p>
+
+
+        </form>
+        <form action = "index">
+            <input name="return" type="submit" value="Retour">
         </form>
     </section>
 </div>
-<a href="index">Retour</a><br/>
+
 <?php
-include("views/common/footer.php")
+include ("views/common/footer.php")
 ?>
 
 </body>

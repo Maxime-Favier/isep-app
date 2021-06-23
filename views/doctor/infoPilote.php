@@ -20,8 +20,7 @@ if ($_SESSION['role'] == "admin"){
     include "views/common/headerLogin.php";
 }
 ?>
-<div id="body">
-
+<div id="corps">
 
 
 <?php
@@ -31,15 +30,20 @@ $infoPilotereq = getInfoPilote($_GET["piloteId"]);
 $infoPilote = $infoPilotereq->fetch();
 ?>
     <h1>Informations de <?php echo $infoPilote['name']." ".$infoPilote['firstName']?></h1>
+
+    <div id="infos">
+        <p>Email : <?php echo $infoPilote["email"]; ?></p>
+        <p>Nom : <?php echo $infoPilote["name"]; ?></p>
+        <p>Prénom : <?php echo $infoPilote["firstName"]; ?></p>
+        <p>Adresse : <?php echo $infoPilote["address"]; ?></p>
+        <div id="modif">
+            <a href ="editPilot?piloteId=<?php echo $_GET["piloteId"];?>"><img src="/design/img/edit.png" alt="edit" id="edit">Editer le profil</a>
+        </div>
+    </div>
+
 <?php
 
-echo "<p>".$infoPilote["name"] . " - " . $infoPilote['firstName'] . " - " . $infoPilote["email"] . " - " . $infoPilote["address"]."</p>";
-//echo $_GET["piloteId"];
-
 ?>
-    <a href ="editPilot?typeOfUser=pilote&piloteId=<?php echo $_GET["piloteId"]; ?>"><img src="/design/img/edit.png" alt="edit"></a>
-
-
     <h1>Liste des derniers tests de <?php echo $infoPilote['name']." ".$infoPilote['firstName']?></h1>
 <table>
     <tr>
@@ -68,7 +72,9 @@ echo "<p>".$infoPilote["name"] . " - " . $infoPilote['firstName'] . " - " . $inf
 </table>
 
     <br/>
-    <a href="index">Retour</a>
+    <form action = "index">
+        <input name="return" type="submit" value="Retour">
+    </form>
     <br/>
 
 

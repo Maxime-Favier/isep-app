@@ -9,17 +9,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>CGU</title>
 </head>
-<body>
+
 <?php
 include "views/doctor/doctorHeader.php";
 ?>
-le texte de mes cgu pour le medecin
+<div class = "body">
 <br/>
 <form method="post" action="process-cgu">
-    <p>Veuillez accepter les dernières <a href='CGU.html'>conditions d'utilisations</a>
+    <p>Veuillez accepter les dernières <a href='CGU' target="_blank">conditions d'utilisations (ci-dessous)</a>
     <input type="checkbox" id="cgu" name="cgu" required>
     <br/>
     <button type="submit">Envoyer</button>
 </form>
+</div>
+<?php
+include ("views/common/footer.php");
+?>
 </body>
 </html>

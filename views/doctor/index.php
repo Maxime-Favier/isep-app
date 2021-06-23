@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="/design/css/Style_page-doc.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Docteur</title>
+    <title>Accueil</title>
 </head>
 <body>
 <?php
@@ -17,7 +17,7 @@
 
 <br/>
 
-<div id="body">
+<div id="corps">
     <?php
     echo "<p><h1>Bienvenue ".$_SESSION['name'] . " " . $_SESSION["firstName"] . " </h1></p>" ;
     ?>
@@ -132,7 +132,7 @@
             echo "Aucun de résultat";
         }
 
-    } else {
+    }else{
 
     }
 

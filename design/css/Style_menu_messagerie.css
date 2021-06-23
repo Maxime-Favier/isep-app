@@ -16,6 +16,7 @@ body {
     overflow: hidden;
     height: 484px;
     position: absolute;
+    margin-left: 40px;
 
 }
 
@@ -223,6 +224,7 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: start;
+
 }
 
 form {

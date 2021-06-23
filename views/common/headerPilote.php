@@ -8,7 +8,7 @@
                 <a href='#' class = 'button2'>MENU<i class='fa fa-gear'></i></a>
                 <ul>
                     <li>
-                        <a href="../index">Page d'accueil</a>
+                        <a href="index">Page d'accueil</a>
                     </li>
                     <li>
                         <a href="editProfile">Gestion du profil</a>

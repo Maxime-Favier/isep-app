@@ -84,10 +84,16 @@ label[name=address]{
 }
 
 input[type=text]{
-    margin-top: 5px;
-    margin-bottom: 5px;
+    height:25px;
+    margin-top: 7px;
+    margin-bottom: 7px;
 }
 
+input[type=password]{
+    height:25px;
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
 input[type=Submit]{
     background-color: #a1cbe6;
 }
@@ -147,4 +153,24 @@ span{
 #menu_deroulant ul li:hover ul li
 {
     display: block;
+}
+
+/*CSS*/
+
+label[name=lumiere]{
+    margin-left: -110px;
+}
+label[name=son]{
+    margin-left: -110px;
+}
+label[name=tempe]{
+    margin-left: 0px;
+}
+label[name = freq]{
+    margin-left: 10px;
+}
+input[type=number]{
+    height:25px;
+    margin-top: 7px;
+    margin-bottom: 7px;
 }

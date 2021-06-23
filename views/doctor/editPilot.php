@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="/design/css/Style_Edit_Profile.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>edition du profil</title>
+    <title>Edition du profil</title>
 </head>
 <body>
 
@@ -37,19 +37,19 @@ else {
 
 
     <form action="submit-profile-user" method="post">
-        <label type ="nom" for="fnom">Nom</label> :
-        <input type="text" id="fnom" name="name" required value="<?php echo $infoUser["name"] ; ?>"><br>
+        <label type ="nom" for="fnom">Nouveau nom</label> :
+        <input id="fnom" name="name" required value="<?php echo $infoUser["name"] ; ?>"><br>
 
-        <label type = "firstName" for="ffistName">Prénom</label> :
-        <input type="text" id="ffistName" name="firstName" required value="<?php echo $infoUser['firstName'] ; ?>"><br>
+        <label type = "firstName" for="ffistName">Nouveau prénom</label> :
+        <input id="ffistName" name="firstName" required value="<?php echo $infoUser['firstName'] ; ?>"><br>
 
-        <label type = "address" for="faddress">adresse</label> :
-        <input type="text" id="faddress" name="address" required value="<?php echo $infoUser["address"] ; ?>"><br>
+        <label type = "address" for="faddress">Nouvelle adresse</label> :
+        <input id="faddress" name="address" required value="<?php echo $infoUser["address"] ; ?>"><br>
 
-        <label type = "email" for="fmail">Email</label> :
+        <label type = "email" for="fmail">Changement d'email</label> :
         <input type="email" id="fmail" name="email" required value="<?php echo $infoUser["email"]; ?>"><br>
 
-        <label type = "password" for="fpassw">Mot de passe</label> :
+        <label type = "password" for="fpassw">Nouveau mot de passe</label> :
         <input type="password" id="fpassw" name="password" required>
 
         <input type = 'hidden' id = "piloteId" name = "piloteId" value="<?php echo $_GET["piloteId"]; ?>"/>
@@ -57,17 +57,22 @@ else {
         <br/>
         <input name ="2" type="submit" value = 'Envoyer'>
         <br/>
-        <a href = "editUsers?deleteUser=true&piloteId=<?php echo$_GET['piloteId'];?>&typeOfUser=<?php echo $_GET['typeOfUser'] ; ?>"> suprimer le compte </a>
-
     </form>
 
+    <form action="editUsers?deleteUser=true&userId=<?php echo$_GET['piloteId'];?>&typeOfUser=pilote" method = 'post'>
+        <input name="delete" type="submit" value="Supprimer le compte"><br/>
+    </form>
+
+    <form action = "index">
+        <input name="return" type="submit" value="Retour">
+    </form>
 
 
 
     <?php
 
 }
-
+include"views/common/footer.php";
 ?>
 
 

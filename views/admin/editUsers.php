@@ -16,11 +16,16 @@ include "views/admin/adminHeader.php";
 ?>
 
 <?php
-if (isset($_GET['deleteUser']) and isset($_GET['typeOfUser'])) {
+    if(isset($_GET['deleteUser'])and isset($_GET['typeOfUser'])){
     require_once("models/delete-user.php");
-    deleteUser($_GET['typeOfUser'], $_GET['userId']);
-    echo "Compte supprimé"; ?><a href='index'>Retour à l'accueil</a><?php
-} else {
+    deleteUser($_GET['typeOfUser'],$_GET['userId']);
+    echo "Compte supprimé";?>
+        <form action = "index">
+            <input name="return" type="submit" value="Retour">
+        </form>
+        <?php
+    }
+else {
 
     require_once("models/admin/InfoUser.php");
     $infoUserreq = getInfoUser($_GET["userId"]);
@@ -28,40 +33,41 @@ if (isset($_GET['deleteUser']) and isset($_GET['typeOfUser'])) {
     ?>
     <h1>Edition du profil<br/></h1>
 
+        <form action="submit-profile-user" method="post">
+        <label name = 'name' type ="nom" for="fnom">Nouveau nom</label> :
+        <input  id="fnom" name="name" required value="<?php echo $infoUser["name"] ; ?>"><br>
 
-    <form action="submit-profile-user" method="post">
-        <label type="nom" for="fnom">Nom</label> :
-        <input type="text" id="fnom" name="name" required value="<?php echo $infoUser["name"]; ?>"><br>
+        <label name = 'firstname' type = "firstName" for="ffistName">Nouveau prénom</label> :
+        <input  id="ffistName" name="firstName" required value="<?php echo $infoUser['firstName'] ; ?>"><br>
 
-        <label type="firstName" for="ffistName">Prénom</label> :
-        <input type="text" id="ffistName" name="firstName" required value="<?php echo $infoUser['firstName']; ?>"><br>
+        <label name = 'address' type = "address" for="faddress">Nouvelle adresse</label> :
+        <input  id="faddress" name="address" required value="<?php echo $infoUser["address"] ; ?>"><br>
 
-        <label type="address" for="faddress">adresse</label> :
-        <input type="text" id="faddress" name="address" required value="<?php echo $infoUser["address"]; ?>"><br>
+        <label name = 'email' type = "email" for="fmail">Changement d'email</label> :
+        <input  id="fmail" name="email" required value="<?php echo $infoUser["email"]; ?>"><br>
 
-        <label type="email" for="fmail">Email</label> :
-        <input type="email" id="fmail" name="email" required value="<?php echo $infoUser["email"]; ?>"><br>
-
-        <label type="password" for="fpassw">Mot de passe</label> :
+        <label name = 'password' type = "password" for="fpassw">Nouveau mot de passe</label> :
         <input type="password" id="fpassw" name="password" required>
 
-        <input type='hidden' id="userId" name="userId" value="<?php echo $_GET["userId"]; ?>"/>
+        <input type = 'hidden' id = "userId" name = "userId" value="<?php echo $_GET["userId"]; ?>"/>
 
         <br/>
-        <input name="2" type="submit" value='Envoyer'>
+        <input name ="2" type="submit" value = 'Envoyer'>
         <br/>
-        <a href="editUsers?deleteUser=true&userId=<?php echo $_GET['userId']; ?>&typeOfUser=<?php echo $_GET['typeOfUser']; ?>">
-            suprimer le compte </a>
+        </form>
 
-    </form>
+        <form action="editUsers?deleteUser=true&userId=<?php echo$_GET['userId'];?>&typeOfUser=<?php echo $_GET['typeOfUser'] ; ?>" method = 'post'>
+            <input name="delete" type="submit" value="Supprimer le compte"><br/>
+        </form>
 
+        <form action = "index">
+            <input name="return" type="submit" value="Retour">
+        </form>
 
-    <?php
+        <?php
 
-}
-
-?>
-
-
+    }
+    include"views/common/footer.php";
+    ?>
 </body>
 </html>

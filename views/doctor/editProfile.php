@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="/design/css/Style_Edit_Profile.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>edition profile</title>
+    <title>Edition profile</title>
 </head>
 <body>
 
@@ -15,34 +15,50 @@
 include "views/doctor/doctorHeader.php";
 ?>
 
+<?php
+if(isset($_GET['deleteUser'])){
+    require_once("models/delete-user.php");
+    deleteUser('pilote',$_GET['piloteId']);
+    echo "Compte supprimé";?>
+    <form action = "index">
+        <input name="return" type="submit" value="Retour">
+    </form>
+    <?php
+}
+else {
+
+require_once("models/admin/InfoUser.php");
+$infoUserreq = getInfoUser($_SESSION['id']);
+$infoUser = $infoUserreq->fetch();
+?>
+
 
 <form action="submit-profile" method="post">
     <p>
     <h1>Edition de profil</h1>
-    <label type ="name" for="fnom">Nom</label> :
-    <input type="text" id="fnom" name="name" required value="<?php echo $_SESSION["name"]; ?>"><br/>
+    <label name = 'name' type ="name" for="fnom">Nouveau nom</label> : <input type="text" id="fnom" name="name" required value="<?php echo $_SESSION["name"]; ?>"></br>
 
-    <label type='firstname' for="ffistName">Prénom</label> :
-    <input type="text" id="ffistName" name="firstName" required value="<?php echo $_SESSION["firstName"]; ?>"><br/>
+    <label name = 'firstname' type='firstname' for="ffistName">Nouveau prénom : </label><input type="text" id="ffistName" name="firstName" required value="<?php echo $_SESSION["firstName"]; ?>"><br/>
 
-    <label type="address" for="faddress">adresse</label> :
-    <input type="text" id="faddress" name="address" required value="<?php echo $_SESSION["address"]; ?>"><br/>
+    <label name = 'address' type="address" for="faddress">Nouvelle adresse : </label><input type="text" id="faddress" name="address" required value="<?php echo $_SESSION["address"]; ?>"><br/>
 
-    <label type='email' for="fmail">Email</label> :
-    <input type="email" id="fmail" name="email" required value="<?php echo $_SESSION["email"]; ?>"><br/>
+    <label name = 'email' type='email' for="fmail">Changement d'email : </label><input type="text" id="fmail" name="email" required value="<?php echo $_SESSION["email"]; ?>"><br/>
 
-    <label type='password' for="fpassw">Mot de passe</label> :
-    <input type="password" id="fpassw" name="password" required>
-    <br/>
-    <input name ="2" type="submit" value = 'Envoyer'>
+    <label name = 'password' type='password'  for='fpassw'>Nouveau mot de passe</label> : <input name = 'password' type ='password' id = 'password' required><br/>
+
+    <input name ="2" type="submit" value = 'Envoyer'><br/>
+
     </p>
 
 </form>
 
-<input name="delete" type="submit" value="Supprimer le compte"><br/>
-<a href="index">Retour</a><br/>
+
+<form action = "index">
+    <input name="return" type="submit" value="Retour">
+</form>
 
 <?php
+}
 include "views/common/footer.php";
 ?>
 </body>

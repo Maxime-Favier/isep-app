@@ -41,6 +41,12 @@ function piloteRouter($route)
         case "submit-addTest":
             processAddTest();
             break;
+        case "submit-getpasserelle":
+            processSubmitGetpasserelle();
+            break;
+        case "submit-passerelle":
+            processSubmitPasserelle();
+            break;
         default:
             echo "Erreur 404 (Not Found) - pilote<br/>" . $route;
             break;

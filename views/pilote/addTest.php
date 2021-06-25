@@ -45,7 +45,7 @@ include "views/common/headerPilote.php";
         <h1>Ajouter à partir de la passerelle isep</h1>
         <div>
             <label name="neq" for="fneq">Numero d'équipe</label>
-            <input type="number" id="fneq" name="neq" min="0" max="9999" value="9999"><br/>
+            <input type="number" id="fneq" name="neq" min="0" max="9999" value="9998"><br/>
             <input type="submit" value="récupérer les trames">
         </div>
         <br/>
